@@ -1,6 +1,7 @@
 // gatsby-config.js
 
 module.exports = {
+  pathPrefix: "/MTahaBlog",
   siteMetadata: {
     title: "MTahaBlog",
     description: "Personal blog about code, ideas, and mindset.",
