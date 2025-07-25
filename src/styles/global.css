@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    background-color: #fdfdfd;
+    color: #111;
+    font-family: system-ui, sans-serif;
+  }
+  a:hover {
+    text-decoration: underline;
+  }

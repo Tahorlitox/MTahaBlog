@@ -1,128 +1,87 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import "../styles/global.css"
 import { StaticImage } from "gatsby-plugin-image"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
+const IndexPage = () => {
+  return (
+    <main style={{ padding: "2rem", fontFamily: "sans-serif", maxWidth: "700px", margin: "auto" }}>
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
+      <div style={{ display: "flex", justifyContent: "flex-end", gap: "1rem", marginBottom: "1rem" }}>
+        <a href="https://www.linkedin.com/in/mohamed-taha-bhaya-1783a133b/" target="_blank" rel="noopener noreferrer" style={iconContainerStyle}>
+            <StaticImage
+              src="../images/linkedin-logo.png"
+              alt="LinkedIn"
+              placeholder="blurred"
+              width={100}
+              height={100}
+            />
 
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
+        </a>
+        <a href="https://gitlab2.istic.univ-rennes1.fr/mbhaya" target="_blank" rel="noopener noreferrer" style={iconContainerStyle}>
+            <StaticImage
+              src="../images/gitlab-logo.png"
+              alt="GitLab"
+              placeholder="blurred"
+              width={100}
+              height={100}
+            />
 
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
+        </a>
+        <a href="mailto:motaha.bhaya@gmail.com" style={iconContainerStyle}>
 
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
+            <StaticImage
+              src="../images/email-logo.png"
+              alt="Email"
+              placeholder="blurred"
+              width={100}
+              height={100}
+            />
 
-const IndexPage = () => (
-  <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
+        </a>
+      </div>
+
+      <h1 style={{ fontSize: "2.5rem", marginBottom: "0.5rem", color: "#007acc" }}>Mohamed Taha BHAYA</h1>
+      
+      <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginTop: "20px" }}>
+        <StaticImage
+          src="../images/profile.png"
+          alt="Profile photo"
+          placeholder="blurred"
+          width={800}
+          height={800}
+          style={{ borderRadius: "800px" }} 
+        />
+        <p style={{ fontSize: "1.5rem", color: "#555", margin: 0 }}>
+          Computer Science Student Passionate about App Development, Game Design & Digital Sustainability
+        </p>
+      </div>
+
+      <p style={{ marginTop: "2.5rem", lineHeight: "1.5", fontSize: "1.2rem" }}>
+        Welcome to my personal website. Here you'll find my latest projects, as well as thoughts on tech, learning, and sustainable computing.
       </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
-  </Layout>
-)
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Home" />
+      <nav style={{ marginTop: "2.5rem" }}>
+        <Link to="/about" style={linkStyle}>About</Link>
+        <Link to="/projects" style={linkStyle}>Projects</Link>
+        <Link to="/blog" style={linkStyle}>Blog</Link>
+      </nav>
+    </main>
+  )
+}
+
+const iconContainerStyle = {
+  display: "inline-block",
+  width: "24px",
+  height: "24px"
+}
+
+const linkStyle = {
+  display: "inline-block",
+  marginRight: "1.5rem",
+  color: "#007acc",
+  textDecoration: "none",
+  fontWeight: "bold"
+}
 
 export default IndexPage
