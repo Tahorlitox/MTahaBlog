@@ -47,7 +47,6 @@ const IndexPage = () => {
         <StaticImage
           src="../images/profile.png"
           alt="Profile photo"
-          placeholder="blurred"
           width={800}
           height={800}
           style={{ borderRadius: "800px" }} 
