@@ -37,4 +37,13 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+  result.data.allMarkdownRemark.nodes.forEach(project => {
+    createPage({
+      path: project.fields.slug,
+      component: path.resolve(`./src/templates/project-post.js`),
+      context: {
+        slug: project.fields.slug,
+      },
+    })
+  })
 }
