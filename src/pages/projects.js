@@ -26,6 +26,12 @@ const ProjectsPage = ({ data }) => {
               </Link>
             </h2>
             <p style={{ margin: "0 0 0.5rem 0", fontSize: "1rem", color: "#555" }}>{project.frontmatter.description}</p>
+
+            {project.frontmatter.tech && (
+              <p style={{ margin: 0, color: "#555"}}>
+                <strong style={{color: "#007acc"}}>Tech:</strong> {project.frontmatter.tech.join(", ")}
+              </p>
+            )}
             
           </div>
         ))}

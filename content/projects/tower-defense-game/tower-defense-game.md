@@ -1,8 +1,8 @@
 ---
-title: "Building a Tower Defense Game from Scratch"
+title: "Building a Tower Defense Game"
 date: "2025-07-25"
 description: "How we created a custom tower defense game in Java — from game mechanics to shop logic and special towers."
-tags: [Java, GameDev, OOP, Student Project]
+tech: [Java, Json, OOP]
 ---
 
 As part of our programming coursework, we built a fully functional **Tower Defense Game** in Java.  
